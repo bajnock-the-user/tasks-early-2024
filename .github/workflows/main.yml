@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  HACKATON_SERVER: https://nokia-hackathon.fly.dev/
+  HACKATON_SERVER: https://nokia-hackathon.fly.dev/custom_api/
   GLOBAL_TIMEOUT: 3
   PYTHON_VER: 3.11
 
