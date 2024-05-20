@@ -6,8 +6,8 @@ on:
       - main
 
 env:
-  HACKATON_SERVER: https://139-162-167-133.ip.linodeusercontent.com/
-  GLOBAL_TIMEOUT: 10
+  HACKATON_SERVER: https://nokia-hackathon.fly.dev/
+  GLOBAL_TIMEOUT: 3
   PYTHON_VER: 3.11
 
 jobs:
