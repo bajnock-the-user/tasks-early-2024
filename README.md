@@ -1,4 +1,4 @@
-# Nokia Hackathon (late 2023)
+# Nokia Hackathon (late 2024)
 
 **General Information:**
 
