@@ -1,43 +1,44 @@
 # Nokia Hackathon (early 2024)
 
-**General Information:**
+**Általános információk:**
 
-Every task has its own "workspace", its own task folder, please stay in these folders while working on the solutions. You can put any necessary requirements to the requirements.txt it will be installed automatically if it is not empty. 
-Points will firstly be based on correction and completion of the tasks, then implementation, functionality, code prettiness and readability will be taken into account as well. You can work in more than one file and use abstraction too. Regarding the points: the third and fourth tasks are considered to be harder, therefore, they worth double points.
+Minden feladatnak megvan a saját „munkaterülete” (workspace), saját feladatmappája. Kérjük, maradjatok ezekben a mappákban, amikor a megoldásokon dolgoztok. Ha valamilyen dependency-re szükségetek van, írjátok a _requirements.txt_ fájlba, és az automatikusan telepítve lesz, ha nem üres.
+A pontokat először az alapján adjuk, hogy a feladatok helyesen és teljesen vannak-e megoldva. Ezután a megvalósítást, a funkcionalitást, a kód szépségét és olvashatóságát is figyelembe vesszük. Több fájlban is dolgozhattok, és használhattok absztrakciót is. A pontozásnál a harmadik és a negyedik feladat nehezebb, ezért ezek dupla pontot érnek.
 
-Folder structure:
+Mappastruktúra:
 
 - _input.txt_
-- _main.py_, which is the main entry point for the automatized test runner, please do not remove this file, it must not have required parameters. Please print your solutions for each and every task in the console.
+- _main.py_, amely az automatizált tesztfuttató fő belépési pontja. Kérjük, ne távolítsátok el ezt a fájlt, és ne legyenek benne kötelező paraméterek. Kérjük, minden feladat megoldását printeljétek ki a console-ra.
 
-**Disclaimer:**
+**Figyelem:**
 
-- The run time of your solutions must not exceed 10 seconds. When checking the solutions if a code is running past these 10 seconds it will automatically be shut down.
-- Make sure you do not modify the .github folder.
-- Make sure you do not rename or delete the main.py file.
+- A megoldások futási ideje nem haladhatja meg az 5 másodpercet. Ha egy kód ennél tovább fut, automatikusan leállítjuk.
+- Figyeljetek arra, hogy ne módosítsátok a .github mappát.
+- Ne nevezzétek át és ne töröljétek a main.py fájlt.
+- A leaderboard nem a végleges állást mutatja, csak a szórakoztatás céljából van ott. Minden eredményt egyénileg végig náünk és pontozunk a fentiekben meghatározottak alapján.
 
-## 1. Palindrome Checker
+## 1. Palindróma-e
 
-**Task Folder:**
+**Feladatmappa:**
 
 palindrome_checker
 
-**Description:**
+**Leírás:**
 
-Your task is to develop a program that checks if a given string is a palindrome while considering only the alphanumeric characters [a-zA-Z0-9] and ignoring upper and lower case. Additionally, the program should count the number of unique characters in the string.
+A feladatotok egy olyan program fejlesztése, amely ellenőrzi, hogy egy adott karakterlánc palindróma-e, miközben csak az alfanumerikus karaktereket [a-zA-Z0-9] veszi figyelembe, és figyelmen kívül hagyja a nagy- és kisbetűk közötti különbségeket. Emellett a programnak meg kell számolnia az egyedi karakterek számát a karakterláncban.
 
-**Input:**
+**Bemenet:**
 
-The input is a list of strings that may contain letters, digits, punctuation, symbols, and spaces. The string can be a combination of uppercase and lowercase characters.
+A bemenet egy karakterláncokból álló lista, amely betűket, számjegyeket, írásjeleket, szimbólumokat és szóközöket tartalmazhat. A karakterlánc nagy- és kisbetűk kombinációja lehet.
 
-**Output:**
+**Kimenet:**
 
-The program should provide the following:
+A programnak a következőket kell biztosítania:
 
-1. Whether the input string is a palindrome.
-2. The count of unique alphanumeric characters in the string.
+1. Hogy a bemeneti karakterlánc palindróma-e.
+2. Az egyedi alfanumerikus karakterek számát a karakterláncban.
 
-**Example:**
+**Példa:**
 
 _input.txt_
 
@@ -63,25 +64,84 @@ YES, 4
 YES, 3
 ```
 
-## 2. Matrix Operations
+## 2. Útvesztő
 
-**Task Folder:**
+**Feladatmappa:**
+
+maze_solver
+
+**Leírás:**
+
+A feladatotok egy olyan program fejlesztése, amely képes egy 2D útvesztő rácson keresztül navigálni, egy kijelölt ponttól elindulva elérni a célt, miközben elkerüli az akadályokat. Az útvesztő rács folyosókból, falakból, egy startól és a célból áll. A programnak meg kell találnia a legrövidebb és leggyorsabb utat a startól a célig.
+
+**Bemenet:**
+
+A bemenet egy 2D rács, amely az útvesztőt ábrázolja. Karaktereket tartalmaz az útvesztő elemeinek jelölésére.
+
+- 'S' a start jelölésére
+- 'G' a cél jelölésére
+- '.' a nyitott útvonalak jelölésére
+- '#' a falak vagy akadályok jelölésére
+
+**Kimenet:**
+
+A programnak meg kell adnia az utat a startól a célig. Ezt az utat a mozgás irányaival kell ábrázolni, mint például: 'U' felfelé, 'D' lefelé, 'L' balra, 'R' jobbra, és tartalmaznia kell a startot 'S' és a célt 'G'.
+
+**Példa:**
+
+_input.txt_
+
+```
+A
+# # # # # # #
+# S . . . . #
+# # . # # . #
+# . . # . . #
+# . . . # # #
+# . # G . . #
+# # # # # # #
+
+B
+*****
+```
+
+A programnak meg kell mutatnia az utat a starttól a célig. Ezt az utat a mozgás irányaival kell jelölni, például: 'U' felfelé, 'D' lefelé, 'L' balra, 'R' jobbra, és tartalmaznia kell a startot 'S' és a célt 'G'.
+
+_console printout:_
+
+```
+A
+S R D D D R D G
+
+B
+*****
+```
+
+A program a mozgások sorrendjét adja meg: jobbra (R), lefelé (D), balra (L) és felfelé (U).
+
+**Megjegyzés:**
+
+Győződjetek meg arról, hogy a program helyesen navigál az útvesztőben, elkerülve az akadályokat, és megtalálva az utat a célhoz.
+
+## 3. Mátrix Műveletek
+
+**Feladatmappa:**
 
 matrix_operations
 
-**Description:**
+**Leírás:**
 
-Your task is to develop a program that can perform a set of matrix operations on matrices of different sizes. These operations include matrix addition and multiplication. The program should be versatile enough to handle matrices with various dimensions.
+A feladatotok egy olyan program fejlesztése, amely különböző méretű mátrixokon képes műveleteket végrehajtani. Ezek a műveletek magukban foglalják a mátrixok összeadását és szorzását. A programnak elég rugalmasnak kell lennie ahhoz, hogy különböző méretű mátrixokkal is dolgozni tudjon.
 
-**Input Format:**
+**Bemenet:**
 
-The input consists of a list of matrices with their own key sizes and values, and then a list of operations.
+A bemenet egy mátrixokat tartalmazó lista értékekkel és a műveletek listája.
 
-**Output:**
+**Kimenet:**
 
-The program should produce the result of the specified matrix operation.
+A programnak a megadott mátrix műveleteket kell megoldanija.
 
-**Example:**
+**Példa:**
 
 _input.txt_
 
@@ -114,130 +174,50 @@ A * B
 23 24
 ```
 
-**Note:**
+**Megjegyzés:**
 
-Ensure that the program handles matrices of different sizes correctly and performs the operations accurately.
+Győződjön meg arról, hogy a program helyesen kezeli a különböző méretű mátrixokat, és pontosan végzi a műveleteket.
 
-## 3. Maze Solver
+## 4. Matematika kvíz
 
-**Task Folder:**
+**Feladatmappa:**
 
-maze_solver
+math_quiz
 
-**Description:**
+**Leírás:**
 
-Your task is to develop a program that can navigate through a 2D maze grid, starting from a designated point and reaching the goal while avoiding obstacles. The maze grid consists of open pathways, walls, a starting point, and the goal. The program should find the shortest and quickest path from the starting point to the goal.
+9 alfeladat van, amelyet meg kell oldanotok, ezek az alfeladatok egymástól függetlenek.
 
-**Input Format:**
+1. Egy vonat állandó sebességgel halad át egy alagúton. 20 másodpercig tart, amíg a 300 m hosszú alagúton átér, onnantól, hogy az eleje eléri az alagút elejét, addig, amíg a vége el nem hagyja. Egy lámpa az alagútban pont 5 másodpercen át van a vonat felett. Milyen hosszú a vonat (méterben)?
 
-The input is a 2D grid that represents the maze. It consists of characters to denote the maze elements. Common characters include:
+2. Egy cukrász két 2 cm, egy 6 cm és egy 8 cm oldalélű marcipánkocka összeragasztásával egy nagyobb testet épített úgy, hogy egy-egy illesztésnél az egyik marcipánkocka teljes oldala ráfeküdt a másik kocka egy lapjára. A kész testből kivághatunk magunknak egy téglatestet, de csak olyan sík mentén vághatunk, amely illeszkedik valamelyik kocka lapjára. Mekkora a legnagyobb térfogatú marcipántégla, amit így kaphatunk (köbcentiméterben)?
 
-- 'S' for the starting point
-- 'G' for the goal
-- '.' for open pathways
-- '#' for walls or obstacles
+3. Jancsi és Juliska a tőlük 20 km-re levő mézeskalácsházhoz igyekszik. Kettejüknek van egy biciklijük, amin egyszerre csak egyikük tud ülni. Elhatározták, hogy először Jancsi fog gyalogolni, és Juliska biciklizik valameddig, ott leteszi a biciklit, majd gyalog megy tovább. Amikor Jancsi odaér, felszáll a biciklire, és elmegy vele a mézeskalácsházig. Jancsi 5 km/h sebességgel gyalogol és 12 km/h sebességgel biciklizik, Juliska 4 km/h sebességgel gyalogol, és 10 km/h sebességgel biciklizik. Hány km-t kell Juliskának bicikliznie, hogy egyszerre érjenek a mézeskalácsházhoz, ha egyszerre is indulnak el?
 
-**Output:**
+4. Egy koordinátarendszerben megrajzoltuk az origó középpontú, 5 egység sugarú kört. Hány rácspont esik erre a körvonalra? (Rácspontnak nevezzük azokat a pontokat, melyeknek mindkét koordinátája egész szám.)
 
-The program should provide the path, from the starting point to the goal. This path should be represented by the movement directions like: 'U' for up, 'D' for down, 'L' for left, 'R' for right and should include the starting point 'S' and the goal 'G'.
+5. A koordináta-rendszerben az ABC háromszög csúcspontjai: A(0;4), B(3;0), C(c;6). A háromszög területe 7. Mekkora a c, ha tudjuk, hogy 0<c<3 ?
 
-**Example:**
+6. Néhányan paintball-ütközetet vívnak egymással. Egy adott helyzetben egymástól való távolságaik mind különbözők. Ekkor mindenki rálő a hozzá legközelebb álló emberre. Legfeljebb hányan lőhetnek ugyanarra az emberre?
 
-_input.txt_
+7. Egy dobozban 30 egyforma nagyságú golyó van: pirosak, kékek és zöldek, mindegyikből különböző mennyiségű, zöldből van a legtöbb. Becsukott szemmel legalább 23 golyót kell kivennünk ahhoz, hogy biztosan legyen mindhárom színű golyó a kihúzottak között; illetve legalább 21 golyót, hogy biztosan legyen piros golyónk. Hány piros golyó van?
 
-```
-A
-# # # # # # #
-# S . . . . #
-# # . # # . #
-# . . # . . #
-# . . . # # #
-# . # G . . #
-# # # # # # #
+8. 1 cm oldalú kis négyzetekből összeraktunk egy nagyobbat. A nagy négyzet átlóiban álló kis négyzetek területének összege 85 négyzetcentiméter. Mekkora a nagy négyzet területe négyzetcentiméterben megadva?
 
-B
-*****
-```
+9. Egy angol-magyar találkozó végén minden résztvevő elköszönt mindegyik másik résztvevőtől: az angolok mindenkinek egyesével ezt mondták: ,,Goodbye!'', míg a magyarok ezt: ,,Viszlát!'' Hányan angol vett részt a találkozón, ha 198-szor hangzott el az, hogy ,,Goodbye!'' és 308-szor az, hogy ,,Viszlát!''?
 
-In this example, the maze is represented by a 2D grid. 'S' marks the starting point, 'G' is the goal, '.' represents open pathways, and '#' indicates walls or obstacles.
+**Bemenet Formátum:**
 
-_console printout:_
+Nincs bemenet ehhez a feladathoz, csak a leírás.
+
+**Kimenet:**
+
+**Példa:**
 
 ```
-A
-S R D D D R D G
-
-B
-*****
+1.: 450
+2.: 1943
+...
+8.: 123
+9.: 1.5
 ```
-
-The program outputs the path as a sequence of movements: right (R), down (D), left (L), and up (U).
-
-**Note:**
-
-Ensure that the program correctly navigates through the maze, avoiding obstacles and finding a path to the goal.
-
-## 4. Dobble Generator
-
-**Task Folder:**
-
-dobble_generator
-
-**Description:**
-
-Your task is to write a generator which can generate a "Dobble deck". The game "Dobble" (or “Spot it!”) consists of a deck of cards, each containing n different symbols. When you choose any two cards from the deck, it is guaranteed that they will have one and only one symbol in common. 
-If you are unfamiliar with the game, you can read about the rules [here](https://www.ultraboardgames.com/spot-it/game-rules.php).
-
-**Input Format:**
-
-Every line of the input file contains the number of symbols on each cards.
-
-**Output:**
-
-Should contain the number of symbols (as a reference) and below the generated output, similarly to the example. 
-If the provided symbol number (or given character) in the input is not valid, instead of the generated list, you should write invalid after the character of the symbols (reference).
-
-**Example:**
-
-_input.txt_
-
-```
-3
-4
-n
-```
-
-_console printout:_
-
-```
-3
-1 - [1, 2, 3]
-2 - [1, 4, 5]
-3 - [1, 6, 7]
-4 - [2, 4, 6]
-5 - [2, 5, 7]
-6 - [3, 4, 7]
-7 - [3, 5, 6]
-
-4
-1 - [1, 2, 3, 4]
-2 - [1, 5, 6, 7]
-3 - [1, 8, 9, 10]
-4 - [1, 11, 12, 13]
-5 - [2, 5, 8, 11]
-6 - [2, 6, 9, 12]
-7 - [2, 7, 10, 13]
-8 - [3, 5, 9, 13]
-9 - [3, 6, 10, 11]
-10 - [3, 7, 8, 12]
-11 - [4, 5, 10, 12]
-12 - [4, 6, 8, 13]
-13 - [4, 7, 9, 11]
-
-n
-invalid
-```
-
-**Constraints:**
-
-- Its essential to note that the same value cannot be a common element in all pairs of cards.

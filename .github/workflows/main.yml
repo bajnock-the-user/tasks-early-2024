@@ -7,7 +7,7 @@ on:
 
 env:
   HACKATON_SERVER: https://nokia-hackathon.fly.dev/custom_api/
-  GLOBAL_TIMEOUT: 3
+  GLOBAL_TIMEOUT: 5
   PYTHON_VER: 3.11
 
 jobs:
