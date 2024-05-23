@@ -187,6 +187,7 @@ math_quiz
 **Leírás:**
 
 9 alfeladat van, amelyet meg kell oldanotok, ezek az alfeladatok egymástól függetlenek.
+Található egy _thinking.txt_ a feladat mappájában, kérünk titeket hogy amennyire tudjátok vezessétek le a megoldásotokat ott.
 
 1. Egy vonat állandó sebességgel halad át egy alagúton. 20 másodpercig tart, amíg a 300 m hosszú alagúton átér, onnantól, hogy az eleje eléri az alagút elejét, addig, amíg a vége el nem hagyja. Egy lámpa az alagútban pont 5 másodpercen át van a vonat felett. Milyen hosszú a vonat (méterben)?
 
